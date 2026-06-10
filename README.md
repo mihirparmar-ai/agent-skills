@@ -1,6 +1,6 @@
 # agent-skills
 
-The AI operating stack behind [En Route Luxe](https://www.enrouteluxe.com), a luxury travel advisory I founded and run ($700K+ in annual bookings, grown entirely through repeat bookings and referrals). The business runs on a "virtual team" of Claude Code agents, custom skills, and a markdown knowledge base that I build and ship daily. This repo shares the architecture, two of the utilities in full, and the design of the knowledge base.
+The AI operating stack behind [En Route Luxe](https://www.enrouteluxe.com), a luxury travel advisory I founded and run ($500K+ in annual bookings, grown entirely through repeat bookings and referrals). The business runs on a "virtual team" of Claude Code agents, custom skills, and a markdown knowledge base that I build and ship daily. This repo shares the architecture, two of the utilities in full, and the design of the knowledge base.
 
 Also here: [How I built the knowledge base](knowledge-base.md). A Karpathy-style LLM wiki in plain markdown: raw sources in, distilled linked pages out, integrity enforced by a deterministic linter.
 
