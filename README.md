@@ -25,7 +25,7 @@ Agents draft. The human reviews. Every skill in the stack follows the same patte
 | X post editor | Content engine · Career + ERL | The same editorial discipline adapted to X mechanics: 280-character constraints, thread structure, source-reply patterns |
 | Itinerary assembly + QA | Travel operations · En Route Luxe | Builds and stress-tests itineraries with automated guardrails: closure checks, transfer buffers, ticketing rules, timing constraints, contingency paths |
 | Flight search MCP server | Travel data · En Route Luxe | Custom MCP server for flight search and date-grid pricing, callable by any agent in the stack |
-| Destination intelligence | Travel data · En Route Luxe | Structured dataset of 190+ destinations (seasonality, fit signals, logistics) powering client research and the public Destination Finder |
+| Destination intelligence | Travel data · En Route Luxe | Structured dataset of 190+ destinations (seasonality, fit signals, logistics) powering client research and the featured journeys on enrouteluxe.com |
 | Deal finder + market screener | Analytics · Personal investing | Scours listing sites, scores candidates against a defined buybox, and outputs a ranked shortlist with reasons |
 | Underwriting models (buy-hold and value-add) | Analytics · Personal investing | Conservative cash-flow and after-repair-value underwriting with walk-away math and sensitivity tables |
 | Market ranking engine | Analytics · Personal investing | Scores 100+ markets on revenue, appreciation, regulation, and supply signals; includes 5-year return modeling |
