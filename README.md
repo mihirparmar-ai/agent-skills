@@ -1,6 +1,8 @@
 # agent-skills
 
-The AI operating stack behind [En Route Luxe](https://www.enrouteluxe.com), a luxury travel advisory I founded and run ($500K+ in annual bookings, grown entirely through repeat bookings and referrals). The business runs on a "virtual team" of Claude Code agents and custom skills that I build and ship daily. This repo shares the architecture and two of the utilities; the business machinery stays private.
+The AI operating stack behind [En Route Luxe](https://www.enrouteluxe.com), a luxury travel advisory I founded and run ($500K+ in annual bookings, grown entirely through repeat bookings and referrals). The business runs on a "virtual team" of Claude Code agents, custom skills, and a markdown knowledge base that I build and ship daily. This repo shares the architecture, two of the utilities in full, and the design of the knowledge base.
+
+Also here: [How I built the knowledge base](knowledge-base.md). A Karpathy-style LLM wiki in plain markdown: raw sources in, distilled linked pages out, integrity enforced by a deterministic linter.
 
 ## The idea: the editor layer
 
@@ -11,17 +13,24 @@ Agents draft. The human reviews. Every skill in the stack follows the same patte
 3. **Skills as packaged judgment.** Each skill encodes one job's trigger conditions, workflow, quality bars, and anti-patterns, so every future session starts calibrated.
 4. **Knowing what NOT to automate.** Supplier selection, disruption response, taste: judgment stays human. That discipline is the product.
 
-## What runs in production
+## The skills library
 
-| Skill | What it does | In this repo? |
+| Skill | Category / project | What it does |
 |---|---|---|
-| [`youtube-transcript-fetch`](youtube-transcript-fetch/) | Turns any YouTube URL into a clean markdown transcript via a cache-first API strategy, routed into the research pipeline | Yes, full code |
-| [`wiki-lint`](wiki-lint/) | Audits a Karpathy-style markdown knowledge wiki with a deterministic Python script (broken links, orphans, missing citations, ingest backlog), then layers agent judgment on what to fix next | Yes, full code |
-| Post editors (LinkedIn / X) | Editorial pipelines with codified voice gates: a Receipt Test (no claim ships without a verifiable artifact), AI-tell scans (em-dashes, arrows, hedge words, banned vocabulary), and iteration caps. The agent drafts; the human picks survivors | Described only: the voice machinery is the business |
-| Research ingest pipeline | Triages link batches against the business roadmap, routes learnings into the knowledge base, executes the resulting changes in-session | Described only |
-| Trip operations skills | Itinerary assembly and QA, booking guardrails, destination intelligence | Private: production business logic |
+| [`youtube-transcript-fetch`](youtube-transcript-fetch/) | Research · Personal OS | Turns any YouTube URL into a clean markdown transcript via a cache-first API strategy, routed into the research pipeline |
+| [`wiki-lint`](wiki-lint/) | Knowledge base · Personal OS | Audits the markdown wiki with a deterministic Python script (broken links, orphans, missing citations, ingest backlog), then layers agent judgment on what to fix next |
+| Research ingest pipeline | Research · Personal OS | Triages batches of links against the business roadmap, routes learnings into the right knowledge base, and executes the resulting changes in-session |
+| Meeting sync | Operations · Personal OS | Pulls call transcripts, extracts action items, decisions, and people facts, and routes each to its home in the knowledge base |
+| LinkedIn post editor | Content engine · Career + ERL | Full editorial pipeline: multiple hooks, codified voice gates, a Receipt Test (no claim ships without a verifiable artifact), AI-tell scans, and iteration caps. The agent drafts; the human picks survivors |
+| X post editor | Content engine · Career + ERL | The same editorial discipline adapted to X mechanics: 280-character constraints, thread structure, source-reply patterns |
+| Itinerary assembly + QA | Travel operations · En Route Luxe | Builds and stress-tests itineraries with automated guardrails: closure checks, transfer buffers, ticketing rules, timing constraints, contingency paths |
+| Flight search MCP server | Travel data · En Route Luxe | Custom MCP server for flight search and date-grid pricing, callable by any agent in the stack |
+| Destination intelligence | Travel data · En Route Luxe | Structured dataset of 190+ destinations (seasonality, fit signals, logistics) powering client research and the public Destination Finder |
+| Deal finder + market screener | Analytics · Personal investing | Scours listing sites, scores candidates against a defined buybox, and outputs a ranked shortlist with reasons |
+| Underwriting models (buy-hold and value-add) | Analytics · Personal investing | Conservative cash-flow and after-repair-value underwriting with walk-away math and sensitivity tables |
+| Market ranking engine | Analytics · Personal investing | Scores 100+ markets on revenue, appreciation, regulation, and supply signals; includes 5-year return modeling |
 
-The two utilities here are sanitized copies of real production files in daily use. Private paths, client details, and business data removed; structure, workflows, and quality bars unchanged.
+The two linked skills ship in full as sanitized copies of real production files. The rest are described here and run privately: the voice machinery and travel operations are the business, and the analytics tooling is personal. Knowing what not to open-source is the same discipline as knowing what not to automate.
 
 ## Why publish this
 
