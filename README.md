@@ -34,7 +34,7 @@ The two linked skills ship in full as sanitized copies of real production files.
 
 ## Why publish this
 
-I write publicly about AI-native product work, including the rule that matters most: the most valuable product decisions are about what NOT to automate. This repo is part of the receipts behind that writing. More at [mihirparmar.ai](https://mihirparmar.ai).
+I write publicly about AI-native product work, including the rule that matters most: the most valuable product decisions are about what NOT to automate. The full essay is [The editor layer](https://www.mihirparmar.ai/writing/editor-layer). This repo is part of the receipts behind that writing. More at [mihirparmar.ai](https://mihirparmar.ai).
 
 ## Author
 
