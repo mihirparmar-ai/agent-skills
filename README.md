@@ -1,6 +1,6 @@
 # agent-skills
 
-The AI operating stack behind [En Route Luxe](https://www.enrouteluxe.com), a luxury travel advisory I founded and run ($500K+ in annual bookings, grown entirely through repeat bookings and referrals). The business runs on a "virtual team" of Claude Code agents, custom skills, and a markdown knowledge base that I build and ship daily. This repo shares the architecture, two of the utilities in full, and the design of the knowledge base.
+The AI operating stack behind [En Route Luxe](https://www.enrouteluxe.com), a luxury travel advisory I founded and run ($700K+ in bookings in 2026 to date, grown entirely through repeat bookings and referrals). The business runs on an agent I built with Claude Code (the itinerary builder, with its own golden set and eval command), custom skills, and a markdown knowledge base that I build and ship daily. This repo shares the architecture, two of the utilities in full, and the design of the knowledge base.
 
 Also here: [How I built the knowledge base](knowledge-base.md). A Karpathy-style LLM wiki in plain markdown: raw sources in, distilled linked pages out, integrity enforced by a deterministic linter.
 
@@ -23,7 +23,7 @@ Agents draft. The human reviews. Every skill in the stack follows the same patte
 | Meeting sync | Operations · Personal OS | Pulls call transcripts, extracts action items, decisions, and people facts, and routes each to its home in the knowledge base |
 | LinkedIn post editor | Content engine · Career + ERL | Full editorial pipeline: multiple hooks, codified voice gates, a Receipt Test (no claim ships without a verifiable artifact), AI-tell scans, and iteration caps. The agent drafts; the human picks survivors |
 | X post editor | Content engine · Career + ERL | The same editorial discipline adapted to X mechanics: 280-character constraints, thread structure, source-reply patterns |
-| Itinerary assembly + QA | Travel operations · En Route Luxe | Builds and stress-tests itineraries with automated guardrails: closure checks, transfer buffers, ticketing rules, timing constraints, contingency paths |
+| Itinerary builder + QA critic | Travel operations · En Route Luxe | Compiles a family's profile into constraints, drafts the itinerary, and runs a read-only critic against seven failure classes (closures, ticket windows, transfer buffers, contingency paths, jet-lag pacing, verified vs estimated pricing, stale venues); scored on a golden set with checker recall and precision. Sanitized publication in progress |
 | Flight search MCP server | Travel data · En Route Luxe | Custom MCP server for flight search and date-grid pricing, callable by any agent in the stack |
 | Destination intelligence | Travel data · En Route Luxe | Structured dataset of 190+ destinations (seasonality, fit signals, logistics) powering client research and the featured journeys on enrouteluxe.com |
 | Deal finder + market screener | Analytics · Personal investing | Scours listing sites, scores candidates against a defined buybox, and outputs a ranked shortlist with reasons |
