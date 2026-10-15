@@ -1,0 +1,233 @@
+{
+  "case_id": "reference-japan",
+  "role": "reference",
+  "purpose": "An advisor-approved draft for the same brief and profile; only the fixed month should remain as a finding.",
+  "advisor_notes": "July kept because the dates are school holidays; afternoons moved indoors as mitigation. Kaiseki kept for the adults with the hotel sitter, marked party: adults. teamLab, ninja, kaiseki all present. Nothing before 09:30. One hands-on afternoon in Tokyo (arcades) and two in Kyoto (ninja, sweets class was dropped for the flight day).",
+  "expected_findings": [
+    {
+      "class": "timing",
+      "item_contains": "Tokyo"
+    },
+    {
+      "class": "timing",
+      "item_contains": "Kyoto"
+    }
+  ],
+  "expected_questions": [
+    "July|month|heat",
+    "kaiseki|sitter|under ten|adults"
+  ],
+  "reference_final": {
+    "rationale_by_day": [
+      {
+        "date": "2027-07-13",
+        "rationale": "Two things only after landing, per the Italy lesson; conveyor sushi because Parent B said it was a hit with Child 2 (Jun 11)."
+      },
+      {
+        "date": "2027-07-14",
+        "rationale": "One shrine in the morning, street food, then teamLab indoors in the heat of the afternoon; the 09:30 floor is Parent B's quote from May 20."
+      },
+      {
+        "date": "2027-07-15",
+        "rationale": "Senso-ji as the one temple, arcades as the hands-on afternoon (the thing they still talk about from Italy), robots at Odaiba for the kids' brief."
+      },
+      {
+        "date": "2027-07-16",
+        "rationale": "Rail after breakfast, the ninja must-have from intake as the afternoon, Fushimi at dusk per the corpus, kaiseki for the adults with the sitter."
+      },
+      {
+        "date": "2027-07-17",
+        "rationale": "One temple at 09:30 and a train with a three-hour margin to the flight, per the buffer rule."
+      }
+    ],
+    "open_findings": [
+      "S-001 timing Tokyo July",
+      "S-002 timing Kyoto July"
+    ],
+    "questions_for_advisor": [
+      "July is an avoid month for both cities and the dates are fixed by school holidays: keep with indoor afternoons, or propose spring break?",
+      "The kaiseki dinner seats no one under ten; marked adults-only with a sitter. Confirm the sitter or move the dinner to a private room."
+    ]
+  },
+  "itinerary": {
+    "trip": {
+      "name": "adeyemi-family, Tokyo and Kyoto",
+      "synthetic": true,
+      "party": {
+        "adults": 2,
+        "kids_ages": [
+          8,
+          13
+        ]
+      },
+      "home_timezone": "America/Los_Angeles",
+      "arrival": {
+        "date": "2027-07-13",
+        "time": "15:30",
+        "airport": "HND",
+        "from": "SFO"
+      },
+      "departure": {
+        "date": "2027-07-17",
+        "time": "16:30",
+        "airport": "HND"
+      }
+    },
+    "days": [
+      {
+        "date": "2027-07-13",
+        "destination": "Tokyo",
+        "fallback": null,
+        "items": [
+          {
+            "time": "15:30",
+            "kind": "flight",
+            "mode": "intl_flight_arrival",
+            "arrive": "15:30",
+            "venue": "Land at Haneda"
+          },
+          {
+            "time": "17:15",
+            "kind": "transfer",
+            "mode": "car",
+            "venue": "Hotel, Shibuya"
+          },
+          {
+            "time": "19:00",
+            "kind": "meal",
+            "venue": "Conveyor-belt sushi, Shibuya",
+            "venue_id": "conveyor-sushi-shibuya",
+            "outdoor": false
+          }
+        ]
+      },
+      {
+        "date": "2027-07-14",
+        "destination": "Tokyo",
+        "fallback": "teamLab moves to the morning if it rains; Odaiba moves to the last evening",
+        "items": [
+          {
+            "time": "10:00",
+            "kind": "activity",
+            "venue": "Meiji Jingu",
+            "venue_id": "meiji-jingu",
+            "outdoor": true
+          },
+          {
+            "time": "12:00",
+            "kind": "activity",
+            "venue": "Harajuku and Takeshita street",
+            "venue_id": "harajuku-takeshita",
+            "outdoor": true
+          },
+          {
+            "time": "15:30",
+            "kind": "activity",
+            "venue": "teamLab Planets",
+            "venue_id": "teamlab-planets",
+            "ticket": "to_book",
+            "outdoor": false
+          }
+        ]
+      },
+      {
+        "date": "2027-07-15",
+        "destination": "Tokyo",
+        "fallback": "Akihabara absorbs a wet afternoon; Odaiba drops",
+        "items": [
+          {
+            "time": "10:00",
+            "kind": "activity",
+            "venue": "Senso-ji and Nakamise street",
+            "venue_id": "senso-ji",
+            "outdoor": true
+          },
+          {
+            "time": "14:00",
+            "kind": "activity",
+            "venue": "Akihabara arcades",
+            "venue_id": "akihabara-arcades",
+            "outdoor": false
+          },
+          {
+            "time": "18:30",
+            "kind": "activity",
+            "venue": "Odaiba seaside and the Gundam",
+            "venue_id": "odaiba-seaside",
+            "outdoor": true
+          }
+        ]
+      },
+      {
+        "date": "2027-07-16",
+        "destination": "Kyoto",
+        "fallback": "Ninja stays; Fushimi becomes the Kyoto sweets class if it pours",
+        "items": [
+          {
+            "time": "10:00",
+            "kind": "rail",
+            "mode": "rail",
+            "arrive": "12:15",
+            "venue": "Nozomi to Kyoto, Green Car",
+            "venue_id": "nozomi",
+            "ticket": "to_book"
+          },
+          {
+            "time": "14:30",
+            "kind": "activity",
+            "venue": "Ninja and samurai experience",
+            "venue_id": "kyoto-ninja-experience",
+            "ticket": "to_book",
+            "outdoor": false
+          },
+          {
+            "time": "17:00",
+            "kind": "activity",
+            "venue": "Fushimi Inari torii gates at dusk",
+            "venue_id": "fushimi-inari",
+            "outdoor": true
+          },
+          {
+            "time": "19:30",
+            "kind": "meal",
+            "venue": "Kaiseki dinner, Gion",
+            "venue_id": "kaiseki-gion",
+            "ticket": "to_book",
+            "outdoor": false,
+            "party": "adults",
+            "notes": "Adults only; hotel sitter for the kids"
+          }
+        ]
+      },
+      {
+        "date": "2027-07-17",
+        "destination": "Kyoto",
+        "fallback": null,
+        "items": [
+          {
+            "time": "09:30",
+            "kind": "activity",
+            "venue": "Kiyomizu-dera and the Higashiyama lanes",
+            "venue_id": "kiyomizu-dera",
+            "outdoor": true
+          },
+          {
+            "time": "11:00",
+            "kind": "rail",
+            "mode": "rail",
+            "arrive": "13:15",
+            "venue": "Nozomi to Tokyo, Green Car",
+            "venue_id": "nozomi",
+            "ticket": "to_book"
+          },
+          {
+            "time": "16:30",
+            "kind": "flight",
+            "mode": "intl_flight",
+            "venue": "Haneda departure"
+          }
+        ]
+      }
+    ]
+  }
+}

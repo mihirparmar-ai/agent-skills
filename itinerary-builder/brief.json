@@ -1,0 +1,10 @@
+{
+  "_note": "SYNTHETIC. The request as it would arrive: a returning family, a destination, a window, a budget band, and a few sentences in their words.",
+  "client_id": "adeyemi-family",
+  "destination_ids": ["Tokyo", "Kyoto"],
+  "dates": { "start": "2027-07-13", "end": "2027-07-17", "flexible": false, "why": "School holidays. Both parents have a hard stop on the 18th." },
+  "arrival": { "airport": "HND", "time": "15:30", "from": "SFO" },
+  "departure": { "airport": "HND", "time": "16:30" },
+  "budget_band": "$25–50K",
+  "in_their_words": "Five days, Tokyo and Kyoto. The kids want the robot and video-game side of Japan, we want food and a temple or two. Please do not make us get up at dawn every day. One theme park at most."
+}

@@ -1,0 +1,101 @@
+{
+  "case_id": "profile-violations",
+  "role": "faulty",
+  "purpose": "Mostly profile faults, plus one opening-hours catch; the arrival-day rule must not fire on a non-arrival day.",
+  "expected_findings": [
+    {
+      "class": "profile",
+      "item_contains": "Kinkaku"
+    },
+    {
+      "class": "profile",
+      "item_contains": "yakiniku"
+    },
+    {
+      "class": "profile",
+      "item_contains": "temples"
+    },
+    {
+      "class": "profile",
+      "item_contains": "teamLab"
+    },
+    {
+      "class": "profile",
+      "item_contains": "ninja"
+    },
+    {
+      "class": "profile",
+      "item_contains": "kaiseki"
+    },
+    {
+      "class": "jetlag",
+      "item_contains": "Kinkaku"
+    },
+    {
+      "class": "closure",
+      "item_contains": "Kinkaku"
+    }
+  ],
+  "itinerary": {
+    "trip": {
+      "name": "adeyemi-family, Kyoto short",
+      "synthetic": true,
+      "party": {
+        "adults": 2,
+        "kids_ages": [
+          8,
+          13
+        ]
+      },
+      "home_timezone": "America/Los_Angeles",
+      "arrival": {
+        "date": "2027-11-05",
+        "time": "15:30",
+        "airport": "HND",
+        "from": "SFO"
+      },
+      "departure": {
+        "date": "2027-11-07",
+        "time": "16:30",
+        "airport": "HND"
+      }
+    },
+    "days": [
+      {
+        "date": "2027-11-06",
+        "destination": "Kyoto",
+        "fallback": null,
+        "items": [
+          {
+            "time": "08:00",
+            "kind": "activity",
+            "venue": "Kinkaku-ji",
+            "venue_id": "kinkaku-ji",
+            "outdoor": true
+          },
+          {
+            "time": "11:00",
+            "kind": "activity",
+            "venue": "Kiyomizu-dera and the Higashiyama lanes",
+            "venue_id": "kiyomizu-dera",
+            "outdoor": true
+          },
+          {
+            "time": "15:00",
+            "kind": "activity",
+            "venue": "Fushimi Inari torii gates",
+            "venue_id": "fushimi-inari",
+            "outdoor": true
+          },
+          {
+            "time": "19:00",
+            "kind": "meal",
+            "venue": "Wagyu yakiniku, Ginza",
+            "venue_id": "yakiniku-ginza",
+            "outdoor": false
+          }
+        ]
+      }
+    ]
+  }
+}

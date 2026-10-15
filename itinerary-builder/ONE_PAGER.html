@@ -1,0 +1,199 @@
+<title>The ERL Itinerary Builder</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #f7f3ec; --panel: #fdfbf7; --ink: #161310; --ink-2: #3f3a33; --muted: #6f6656; --rule: #e3dbcc;
+    --gold: #a8853f; --gold-soft: #f1e7d2; --slate: #4d6072; --mono-bg: #f0ebe1; --danger: #9c3f2f; --good: #3f6b4a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0a0a0a; --panel: #111110; --ink: #f5f0e8; --ink-2: #d9d1c3; --muted: #8b8070; --rule: #262421;
+      --gold: #c9a96e; --gold-soft: #1f1a11; --slate: #9db0c2; --mono-bg: #121210; --danger: #d47a68; --good: #8fbf9a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0a0a0a; --panel: #111110; --ink: #f5f0e8; --ink-2: #d9d1c3; --muted: #8b8070; --rule: #262421;
+    --gold: #c9a96e; --gold-soft: #1f1a11; --slate: #9db0c2; --mono-bg: #121210; --danger: #d47a68; --good: #8fbf9a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--ground); color: var(--ink); font-family: "Inter", system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 14.5px; line-height: 1.6; padding-inline: 20px; padding-block: 36px 56px; }
+  .page { max-width: 900px; margin-inline: auto; display: grid; gap: 30px; }
+  .eyebrow { font-size: 10.5px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+  h1 { font-family: "Playfair Display", Georgia, serif; font-weight: 400; font-size: clamp(30px, 4.6vw, 42px); line-height: 1.1; letter-spacing: 0.01em; margin: 6px 0 10px; text-wrap: balance; }
+  h2 { font-family: "Playfair Display", Georgia, serif; font-weight: 400; font-size: 21px; line-height: 1.25; margin: 0 0 10px; text-wrap: balance; }
+  h3 { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; margin: 0 0 6px; color: var(--muted); }
+  p { margin: 0; max-width: 68ch; }
+  p + p { margin-top: 8px; }
+  strong { font-weight: 500; color: var(--ink); }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 12px; }
+  header { display: grid; gap: 4px; border-bottom: 1px solid var(--rule); padding-bottom: 22px; }
+  .lede { font-size: 16px; color: var(--ink-2); max-width: 62ch; }
+  section { display: grid; gap: 14px; }
+  .definition { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .definition .col p { color: var(--ink-2); }
+  .definition .agent h3 { color: var(--gold); }
+  .marks { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .mark { padding: 14px 14px 14px 14px; border-right: 1px solid var(--rule); }
+  .mark:first-child { padding-left: 0; }
+  .mark:last-child { border-right: 0; }
+  .mark h3 { color: var(--ink); letter-spacing: 0.18em; }
+  .mark p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .mark p.this { color: var(--ink-2); margin-top: 6px; }
+  .mark p.this b { color: var(--gold); font-weight: 500; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; }
+  .table { display: grid; border-top: 1px solid var(--rule); font-size: 13px; }
+  .table .row { display: grid; gap: 12px; padding: 7px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .table .row.head { font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+  .tools .row { grid-template-columns: 150px 1fr 110px 1fr; }
+  .tools .name { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 12px; color: var(--ink); }
+  .tools .w { font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; color: var(--muted); }
+  .tools .w.write { color: var(--danger); }
+  .table .why { color: var(--ink-2); }
+  .signals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .signal { border-top: 2px solid var(--gold); padding-top: 8px; display: grid; gap: 4px; align-content: start; }
+  .signal h3 { color: var(--ink); letter-spacing: 0.18em; }
+  .signal p { font-size: 13px; color: var(--ink-2); }
+  .signal .q { font-family: "Playfair Display", Georgia, serif; font-style: italic; color: var(--ink); font-size: 14px; }
+  .signal .to { font-size: 12px; color: var(--muted); }
+  .signal .to b { color: var(--gold); font-weight: 500; }
+  .loop { display: grid; grid-template-columns: 1.1fr 1fr; gap: 22px; align-items: start; }
+  pre { margin: 0; font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 11.5px; line-height: 1.55; background: var(--mono-bg); border: 1px solid var(--rule); padding: 12px 14px; color: var(--ink-2); overflow-x: auto; white-space: pre; }
+  pre .k { color: var(--gold); } pre .f { color: var(--danger); } pre .g { color: var(--good); } pre .s { color: var(--slate); }
+  .cap { font-size: 12.5px; color: var(--muted); max-width: none; }
+  .evals { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .eval { background: var(--panel); border: 1px solid var(--rule); border-top: 3px solid var(--slate); padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+  .eval h3 { color: var(--slate); }
+  .eval .n { font-family: "Playfair Display", Georgia, serif; font-size: 26px; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .eval p { font-size: 13px; color: var(--ink-2); }
+  .scorecard .row { grid-template-columns: 190px 1fr 90px; }
+  .scorecard .v { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 12px; color: var(--ink); text-align: right; }
+  .split { display: grid; grid-template-columns: 1.2fr 1fr; gap: 26px; }
+  .split ul { margin: 0; padding-left: 18px; color: var(--ink-2); display: grid; gap: 5px; }
+  .rulebox { background: var(--gold-soft); border-left: 3px solid var(--gold); padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+  .rulebox p { color: var(--ink-2); font-size: 13.5px; }
+  .rulebox .line { font-family: "Playfair Display", Georgia, serif; font-size: 18px; line-height: 1.3; color: var(--ink); }
+  footer { border-top: 1px solid var(--rule); padding-top: 14px; font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  @media (max-width: 720px) {
+    .definition, .loop, .split, .signals, .evals { grid-template-columns: 1fr; }
+    .marks { grid-template-columns: 1fr; }
+    .mark { border-right: 0; border-bottom: 1px solid var(--rule); padding-left: 0; }
+    .mark:last-child { border-bottom: 0; }
+    .tools .row, .scorecard .row { grid-template-columns: 1fr; gap: 2px; }
+    .scorecard .v { text-align: left; }
+  }
+  @media print { body { padding-block: 12px; font-size: 12.5px; } .page { gap: 16px; } pre, .eval, .rulebox { break-inside: avoid; } }
+</style>
+
+<div class="page">
+  <header>
+    <div class="eyebrow">En Route Luxe · the agent stack · September 2026</div>
+    <h1>The Itinerary Builder</h1>
+    <p class="lede">One agent. It drafts a trip from what the house knows about a client, checks its own draft against the house rules and the client's profile, and hands the advisor a proposal with the reasoning and the questions it could not settle. Synthetic data throughout.</p>
+  </header>
+
+  <section>
+    <h2>What an AI agent is</h2>
+    <div class="definition">
+      <div class="col"><h3>A chat</h3><p>A model answers a question. The human is the loop, the memory, the tool-caller, and the verifier. Ask a chatbot for a Japan itinerary and you get a plausible one; you still check the hours, you still remember what the client said last spring, and you still decide.</p></div>
+      <div class="col agent"><h3>An agent</h3><p>A model inside a loop with tools, state, and a stopping policy. It observes, decides the next action, acts through a tool, checks the result, and continues, finishes, or escalates. <strong>The product work is the stopping policy</strong>: where it acts alone, where it drafts, where it hands off.</p></div>
+    </div>
+    <div class="marks">
+      <div class="mark"><h3>Trigger</h3><p>What starts it. An event, a schedule, or a person.</p><p class="this"><b>here</b> a brief arrives</p></div>
+      <div class="mark"><h3>Tools</h3><p>What it can read and write. The write list is the risk list.</p><p class="this"><b>here</b> six reads, one write</p></div>
+      <div class="mark"><h3>Loop</h3><p>Plan, act, observe, plan again, with no human between steps.</p><p class="this"><b>here</b> draft, check, revise, finalize</p></div>
+      <div class="mark"><h3>State</h3><p>What it remembers across steps and across runs.</p><p class="this"><b>here</b> the client profile, across trips</p></div>
+      <div class="mark"><h3>Policy</h3><p>Acts alone, drafts, or escalates. Whether output is scored.</p><p class="this"><b>here</b> drafts for the advisor; escalates the rest</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The tools</h2>
+    <div class="table tools">
+      <div class="row head"><span>Tool</span><span>Reads</span><span>Writes</span><span>Guards against</span></div>
+      <div class="row"><span class="name">get_brief</span><span class="why">the request: dates, party, budget band, their words</span><span class="w">nothing</span><span class="why">designing for the wrong dates or party</span></div>
+      <div class="row"><span class="name">get_profile</span><span class="why">the Trip DNA and the compiled constraints</span><span class="w">nothing</span><span class="why">designing from the intake form alone</span></div>
+      <div class="row"><span class="name">lookup_destination</span><span class="why">the corpus: months, timing truths, pitfalls, highlights</span><span class="w">nothing</span><span class="why">the wrong month, a signature moment at the wrong hour</span></div>
+      <div class="row"><span class="name">list_venues</span><span class="why">the venue catalog</span><span class="w">nothing</span><span class="why">inventing a venue; every item is a catalog id</span></div>
+      <div class="row"><span class="name">lookup_venue</span><span class="why">hours, closures, age floors, ticket windows, each with a source and a checked-on date</span><span class="w">nothing</span><span class="why">a closed day, a missed ticket window, an age floor</span></div>
+      <div class="row"><span class="name">draft_itinerary</span><span class="why">the draft it is handed</span><span class="w write">findings list</span><span class="why">all of the above, on its own work, before the advisor sees it</span></div>
+      <div class="row"><span class="name">finalize</span><span class="why">the current draft</span><span class="w write">the proposal</span><span class="why">a draft with no reasoning attached</span></div>
+    </div>
+    <p class="cap">No tool edits a draft in place, books anything, or contacts anyone. A venue not in the rules is unknown, and unknown means unverified, never assumed open.</p>
+  </section>
+
+  <section>
+    <h2>What the house knows, as data</h2>
+    <div class="signals">
+      <div class="signal"><h3>Explicit</h3><p>Intake form and onboarding call.</p><p class="q">No beef. One theme park at most. Must-haves: teamLab, a ninja experience, one kaiseki dinner.</p><p class="to"><b>becomes</b> a venue-tag exclusion, a per-trip cap, three must-have checks, an age floor</p></div>
+      <div class="signal"><h3>Conversational</h3><p>Dated quotes from calls and messages.</p><p class="q">"We are not a 6 a.m. family. Nine is early for us on holiday." Parent B, May 20</p><p class="to"><b>becomes</b> a 09:30 floor on every start; a two-temple daily cap from another quote</p></div>
+      <div class="signal"><h3>Behavioral</h3><p>Past trips: booked, raved about, skipped, the lesson.</p><p class="q">Italy 2025: left the second museum after 40 minutes. Costa Rica 2024: cancelled the 05:30 walk.</p><p class="to"><b>becomes</b> one anchor a morning, one hands-on thing an afternoon, nothing before nine</p></div>
+    </div>
+    <p class="cap"><span class="mono">compile</span> prints every constraint with the signal it came from. That output is the personalization receipt: the signal, the rule it became, and where it applies.</p>
+  </section>
+
+  <section>
+    <h2>The loop, on the synthetic brief</h2>
+    <div class="loop">
+      <div>
+<pre><span class="k">call</span> get_brief          Jul 13 to 17, dates fixed (school holidays)
+<span class="k">call</span> get_profile        13 constraints, floor 09:30, youngest 8
+<span class="k">call</span> lookup_destination Tokyo: Jul is an avoid month
+<span class="k">call</span> list_venues        11 allowed, 3 dropped (dawn, beef, adults)
+<span class="k">call</span> draft_itinerary    draft 1
+     <span class="f">11 fixable</span>: closure, ticketing, buffer, jetlag,
+                 group_fit, contingency x2, profile x4
+<span class="k">call</span> draft_itinerary    draft 2
+     <span class="g">0 fixable</span>; timing x2 go to the advisor
+<span class="k">call</span> finalize           rationale per day, 2 questions</pre>
+        <p class="cap">The shape of a run. Draft 1 above is the golden faulty case resubmitted; draft 2 is the advisor-approved reference. Both were run through the tool layer without a model; a live model run is not yet verified on this machine.</p>
+      </div>
+      <div class="rulebox">
+        <h3>What it escalates, on purpose</h3>
+        <p class="line">July is an avoid month and the dates are fixed. The kaiseki seats no one under ten and the youngest is eight.</p>
+        <p>Neither is a bug in the rules. The agent mitigates (indoor afternoons), may propose the dinner as adults-only with a sitter, and raises both with the evidence. The advisor's answer is expressible in the data, which is how the reference draft passes with only the month left open.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it is measured</h2>
+    <div class="evals">
+      <div class="eval"><h3>Golden set</h3><div class="n">100% · 100%</div><p>Recall and precision of the checker over three cases and 23 expected findings: every rule planted once; profile faults only; an advisor-approved reference where only the month remains.</p><p class="cap">Building it found one checker bug and two gaps in the human expectations.</p></div>
+      <div class="eval"><h3>Scorecard</h3><div class="n">6 metrics</div><p>Hard constraints, must-have coverage, profile violations, escalation coverage, rationale traceability, overlap with the reference. Runs on any draft, including the agent's next one.</p></div>
+      <div class="eval"><h3>The loop</h3><div class="n">0 rows</div><p>The advisor's accept, reject, or fix on each finding, logged, becomes per-class precision over time. A rejected finding becomes a golden case. Mechanism built; data one trip old.</p></div>
+    </div>
+    <div class="table scorecard">
+      <div class="row head"><span>Metric</span><span>Meaning</span><span>Reference</span></div>
+      <div class="row"><span class="mono">hard constraints</span><span class="why">zero fixable findings on the final draft</span><span class="v">pass</span></div>
+      <div class="row"><span class="mono">must-have coverage</span><span class="why">intake must-haves present</span><span class="v">3 of 3</span></div>
+      <div class="row"><span class="mono">profile violations</span><span class="why">start floor, anchor cap, exclusions</span><span class="v">0</span></div>
+      <div class="row"><span class="mono">escalation coverage</span><span class="why">the expected advisor questions raised</span><span class="v">2 of 2</span></div>
+      <div class="row"><span class="mono">rationale traceable</span><span class="why">days whose rationale names a client signal</span><span class="v">4 of 5</span></div>
+      <div class="row"><span class="mono">reference overlap</span><span class="why">venues shared with the advisor-approved draft</span><span class="v">1.0</span></div>
+    </div>
+    <p class="cap">The fifth day's rationale cites a house rule, not the client. The metric is not rigged.</p>
+  </section>
+
+  <section class="split">
+    <div>
+      <h2>The honest edges</h2>
+      <ul>
+        <li><strong>Rules where a fact is cheaply verifiable, a model where judgment is needed, a person where the trip is at stake.</strong> The checker never misses a rule it has and never finds a problem it has no rule for; the model composes and can be wrong; the advisor decides.</li>
+        <li><strong>Not wired to the website.</strong> The Second Opinion form is the eventual entry point.</li>
+        <li><strong>Not live rules.</strong> Hours and ticket windows are cached with a source and a checked-on date.</li>
+        <li><strong>Not client data.</strong> The family, the quotes, and the past trips are invented.</li>
+        <li><strong>Not a booking agent.</strong> The write list has one entry and it is a findings list.</li>
+      </ul>
+    </div>
+    <div class="rulebox">
+      <h3>The bridge line</h3>
+      <p class="line">Where does it act alone, where does it draft, where does it escalate.</p>
+      <p>A servicing agent mapped to specific APIs, running a deterministic workflow, that cannot invent a refund amount, is the same shape: tools to verify, a loop across days, state across trips, and a hard boundary on what it can touch.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span class="mono">node itinerary-builder.mjs compile | check | draft | eval</span>
+    <span>Agent card: AGENT.md</span>
+    <span>Audit: docs/ERL_AGENT_INVENTORY.md</span>
+  </footer>
+</div>

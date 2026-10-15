@@ -1,0 +1,234 @@
+{
+  "_note": "Cached venue hours and weekly closures for the venues in the demo itinerary. Every entry carries a source and a checked_on date. A venue not listed here is unknown to the checker, and unknown means unverified, never assumed open. Verify entries before any real use; some venues publish monthly calendars.",
+  "venues": {
+    "toyosu-market": {
+      "name": "Toyosu Market",
+      "open": "05:00",
+      "close": "15:00",
+      "closed_on": [
+        "Sunday",
+        "Wednesday"
+      ],
+      "note": "Closed Sundays and most Wednesdays; the market publishes a monthly calendar with extra closures.",
+      "source": "toyosu-market.or.jp market calendar",
+      "checked_on": "2026-09-15"
+    },
+    "teamlab-planets": {
+      "name": "teamLab Planets, Toyosu",
+      "open": "09:00",
+      "close": "22:00",
+      "last_entry": "21:00",
+      "closed_on": [],
+      "note": "Irregular maintenance closures are announced on the ticket page.",
+      "source": "teamlab.art/e/planets",
+      "checked_on": "2026-09-15"
+    },
+    "ghibli-museum": {
+      "name": "Ghibli Museum, Mitaka",
+      "open": "10:00",
+      "close": "18:00",
+      "last_entry": "16:00",
+      "closed_on": [
+        "Tuesday"
+      ],
+      "note": "Closed Tuesdays except some holiday weeks.",
+      "source": "ghibli-museum.jp/en/ticket-information",
+      "checked_on": "2026-09-15"
+    },
+    "senso-ji": {
+      "name": "Senso-ji, Asakusa",
+      "open": "06:00",
+      "close": "17:00",
+      "closed_on": [],
+      "note": "Grounds open all day; the main hall keeps these hours.",
+      "source": "senso-ji.jp",
+      "checked_on": "2026-09-15"
+    },
+    "tokyo-national-museum": {
+      "name": "Tokyo National Museum, Ueno",
+      "open": "09:30",
+      "close": "17:00",
+      "last_entry": "16:30",
+      "closed_on": [
+        "Monday"
+      ],
+      "note": "Closed Mondays; open on a Monday holiday and closed the next day instead.",
+      "source": "tnm.jp",
+      "checked_on": "2026-09-15"
+    },
+    "meiji-jingu": {
+      "name": "Meiji Jingu",
+      "open": "05:00",
+      "close": "18:00",
+      "closed_on": [],
+      "note": "Gates track sunrise and sunset; July opens about 05:00.",
+      "source": "meijijingu.or.jp",
+      "checked_on": "2026-09-15"
+    },
+    "shibuya-sky": {
+      "name": "Shibuya Sky",
+      "open": "10:00",
+      "close": "22:30",
+      "last_entry": "21:20",
+      "closed_on": [],
+      "note": "Timed entry in 20-minute windows; no time limit once inside.",
+      "source": "shibuya-scramble-square.com/sky",
+      "checked_on": "2026-09-15"
+    },
+    "ginza-whiskey-bar": {
+      "name": "Eight-seat whiskey bar, Ginza",
+      "open": "18:00",
+      "close": "01:00",
+      "closed_on": [
+        "Sunday"
+      ],
+      "min_age": 20,
+      "note": "Adults only. The legal drinking age in Japan is 20 and small bars refuse minors at the door.",
+      "source": "house rule, venue unnamed on purpose",
+      "checked_on": "2026-09-15"
+    },
+    "odaiba-seaside": {
+      "name": "Odaiba Seaside Park",
+      "open": "00:00",
+      "close": "23:59",
+      "closed_on": [],
+      "source": "tokyo-park.or.jp",
+      "checked_on": "2026-09-15"
+    },
+    "fushimi-inari": {
+      "name": "Fushimi Inari Taisha",
+      "open": "00:00",
+      "close": "23:59",
+      "closed_on": [],
+      "note": "Open around the clock.",
+      "source": "inari.jp",
+      "checked_on": "2026-09-15"
+    },
+    "arashiyama-bamboo": {
+      "name": "Arashiyama Bamboo Grove",
+      "open": "00:00",
+      "close": "23:59",
+      "closed_on": [],
+      "note": "A public path; open around the clock, quiet only before 08:00.",
+      "source": "kyoto.travel",
+      "checked_on": "2026-09-15"
+    },
+    "gion": {
+      "name": "Gion evening walk",
+      "open": "00:00",
+      "close": "23:59",
+      "closed_on": [],
+      "source": "public streets",
+      "checked_on": "2026-09-15"
+    },
+    "kinkaku-ji": {
+      "name": "Kinkaku-ji",
+      "open": "09:00",
+      "close": "17:00",
+      "closed_on": [],
+      "source": "shokoku-ji.jp/kinkakuji",
+      "checked_on": "2026-09-15"
+    },
+    "tsukiji-outer-market": {
+      "name": "Tsukiji outer market",
+      "open": "05:00",
+      "close": "14:00",
+      "closed_on": [
+        "Sunday"
+      ],
+      "note": "Many stalls also close on Wednesdays; the market publishes a calendar.",
+      "source": "tsukiji.or.jp",
+      "checked_on": "2026-09-15"
+    },
+    "akihabara-arcades": {
+      "name": "Akihabara arcades",
+      "open": "10:00",
+      "close": "23:00",
+      "closed_on": [],
+      "source": "venue sites",
+      "checked_on": "2026-09-15"
+    },
+    "harajuku-takeshita": {
+      "name": "Takeshita street",
+      "open": "10:00",
+      "close": "20:00",
+      "closed_on": [],
+      "source": "public street; shop hours",
+      "checked_on": "2026-09-15"
+    },
+    "conveyor-sushi-shibuya": {
+      "name": "Conveyor-belt sushi, Shibuya",
+      "open": "11:00",
+      "close": "23:00",
+      "closed_on": [],
+      "source": "venue site",
+      "checked_on": "2026-09-15"
+    },
+    "yakiniku-ginza": {
+      "name": "Wagyu yakiniku, Ginza",
+      "open": "17:00",
+      "close": "23:00",
+      "closed_on": [
+        "Monday"
+      ],
+      "source": "venue site",
+      "checked_on": "2026-09-15"
+    },
+    "arashiyama-monkey-park": {
+      "name": "Arashiyama monkey park",
+      "open": "09:00",
+      "close": "16:00",
+      "last_entry": "15:30",
+      "closed_on": [],
+      "source": "monkeypark.jp",
+      "checked_on": "2026-09-15"
+    },
+    "kyoto-ninja-experience": {
+      "name": "Ninja and samurai experience",
+      "open": "10:30",
+      "close": "20:00",
+      "closed_on": [],
+      "source": "venue site",
+      "checked_on": "2026-09-15"
+    },
+    "nishiki-market": {
+      "name": "Nishiki market",
+      "open": "10:00",
+      "close": "18:00",
+      "closed_on": [],
+      "note": "Individual stalls close irregularly, often Wednesdays.",
+      "source": "kyoto-nishiki.or.jp",
+      "checked_on": "2026-09-15"
+    },
+    "kiyomizu-dera": {
+      "name": "Kiyomizu-dera",
+      "open": "06:00",
+      "close": "18:00",
+      "closed_on": [],
+      "source": "kiyomizudera.or.jp",
+      "checked_on": "2026-09-15"
+    },
+    "kaiseki-gion": {
+      "name": "Kaiseki dinner, Gion",
+      "open": "17:30",
+      "close": "22:00",
+      "closed_on": [
+        "Sunday"
+      ],
+      "min_age": 10,
+      "note": "The counter does not seat children under ten; a private room takes families and must be requested at booking.",
+      "source": "house note from booking",
+      "checked_on": "2026-09-15"
+    },
+    "kyoto-sweets-class": {
+      "name": "Wagashi sweets class",
+      "open": "10:00",
+      "close": "17:00",
+      "closed_on": [
+        "Sunday"
+      ],
+      "source": "venue site",
+      "checked_on": "2026-09-15"
+    }
+  }
+}

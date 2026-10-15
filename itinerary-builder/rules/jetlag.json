@@ -1,0 +1,8 @@
+{
+  "_note": "Pacing rules for the first days after a large time-zone shift. Applied when the absolute shift between the home time zone and the destination is at least min_shift_hours.",
+  "min_shift_hours": 6,
+  "protected_days": 2,
+  "earliest_start": "09:00",
+  "max_items_arrival_day": 2,
+  "note": "West-coast US to Japan is a 16-hour shift. The body clock lands at roughly 22:00 home time in the mid-afternoon. A 06:00 start on day two is 14:00 the previous day for the body, and children under ten do not reliably manage it. Day one after landing should hold at most two scheduled things."
+}

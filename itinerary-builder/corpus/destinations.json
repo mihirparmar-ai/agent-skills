@@ -1,0 +1,77 @@
+{
+  "_note": "Snapshot of three public rows from the ERL destinations corpus (Supabase, 2026-09-15). Marketing data only; nothing client-identifying. The live checker can read Supabase directly later; the demo reads this file so it runs offline.",
+  "destinations": [
+    {
+      "destination_id": "DEST_TOKYO",
+      "destination_name": "Tokyo",
+      "country": "Japan",
+      "timezone_iana": "Asia/Tokyo",
+      "best_months_arr": ["Mar", "Apr", "May", "Oct", "Nov"],
+      "also_good_months_arr": ["Dec", "Jan", "Feb"],
+      "avoid_months_arr": ["Jun", "Jul", "Aug", "Sep"],
+      "group_fit_arr": ["CPL", "FAM", "GRP", "SOLO"],
+      "kidjoy_score": 5,
+      "hard_to_plan_score": 4,
+      "timing_truths": "En Route Truth: Spring (cherry blossoms) and autumn (koyo) are visually stunning but exponentially more crowded. Winter (January-February) is Tokyo's best-kept secret: crisp, clear skies (giving you the best views of Mt. Fuji), zero humidity, and immediate access to the city's legendary dining scene. | September is peak typhoon season; expect travel disruptions.",
+      "common_pitfalls": "Believing your hotel concierge can get you into any restaurant at the last minute. The top-tier sushi and kaiseki spots require booking via specific platforms exactly 30 or 60 days out at midnight Japan time. | Carrying only credit cards; while improving, many small ramen shops and bars remain cash-only.",
+      "signature_moments": "Walking through the hyper-modern Azabudai Hills at night, transitioning seamlessly from futuristic architecture to a centuries-old, serene Kaiseki dining room. | Standing in the exact center of the Shibuya Crossing at rush hour.",
+      "unique_insights": "Tokyo is not one city; it is 15 distinct cities connected by trains. Group your days geographically (e.g., Shibuya/Harajuku on Day 1, Ginza/Tsukiji on Day 2) to avoid spending half your trip underground. | Taxis are immaculate and drivers wear white gloves, but they are very expensive; the subway is the true luxury hack for speed.",
+      "highlights_arr": [
+        "Pre-dawn visit to the Toyosu fish market followed by a masterclass sushi breakfast",
+        "Shibuya Sky timed entry near sunset for a full-city neon glow",
+        "Discovering an eight-seat, unmarked whiskey bar in Ginza",
+        "Staying at hyper-luxury urban sanctuaries like Aman Tokyo or Janu",
+        "Immersive digital art experiences at teamLab Borderless in Azabudai Hills",
+        "Curated shopping through the flagship designer boutiques of Omotesando"
+      ]
+    },
+    {
+      "destination_id": "DEST_KYOTO",
+      "destination_name": "Kyoto",
+      "country": "Japan",
+      "timezone_iana": "Asia/Tokyo",
+      "best_months_arr": ["Mar", "Apr", "May", "Oct", "Nov"],
+      "also_good_months_arr": ["Dec", "Jan", "Feb", "Sep"],
+      "avoid_months_arr": ["Jun", "Jul", "Aug"],
+      "group_fit_arr": ["CPL", "FAM", "GRP", "SOLO"],
+      "kidjoy_score": 3,
+      "hard_to_plan_score": 4,
+      "timing_truths": "En Route Truth: Cherry blossom forecasts shift every year, and peak bloom brings absolute chaos. The real secret is late November: the autumn foliage (koyo) is stunning, the air is crisp, and the spring crowd chaos is absent. | Summer in the Kyoto basin is a brutally humid, stagnant oven; avoid July and August entirely.",
+      "common_pitfalls": "Temple fatigue. Planning to visit five temples a day will leave you exhausted and numb to their beauty. Relying on public transport during Golden Week (late April) guarantees gridlock. | Harassing geisha in the Gion district for photos; it is highly disrespectful and now strictly policed with fines.",
+      "signature_moments": "Walking the Philosopher's Path before the tour buses arrive, feeling the profound, meditative silence that defined the ancient capital. | Watching a Maiko perform a traditional dance in a private tatami room during a multi-course Kaiseki dinner.",
+      "unique_insights": "True luxury in Kyoto isn't just about budget; it's about access. The absolute best ryokans, like Tawaraya, do not operate on standard hotel booking engines. They open their books exactly six months out and sell out within hours. | The city grid is massive; you must group your temple visits geographically.",
+      "highlights_arr": [
+        "Arashiyama bamboo forest at 6:30 AM, followed by a quiet garden detour",
+        "Fushimi Inari at dusk/night for a lantern-lit, crowd-free atmosphere",
+        "Private tea ceremony with an etiquette primer in a historic machiya",
+        "Staying at world-class luxury properties like Aman Kyoto or Tawaraya",
+        "Exclusive geisha (geiko) dinner arranged through top-tier concierges",
+        "Walking the Philosopher's Path during the peak autumn koyo season"
+      ]
+    },
+    {
+      "destination_id": "DEST_OSAKA",
+      "destination_name": "Osaka",
+      "country": "Japan",
+      "timezone_iana": "Asia/Tokyo",
+      "best_months_arr": ["Mar", "Apr", "Oct", "Nov"],
+      "also_good_months_arr": ["May", "Sep"],
+      "avoid_months_arr": ["Jun", "Jul", "Aug", "Dec", "Jan", "Feb"],
+      "group_fit_arr": ["CPL", "FAM", "GRP", "SOLO"],
+      "kidjoy_score": 4,
+      "hard_to_plan_score": 2,
+      "timing_truths": "En Route Truth: Summer (June-August) brings brutal, suffocating humidity and monsoon rains. You must visit in the crisp, stunning windows of Spring (Cherry Blossoms) or Autumn (Fall Foliage).",
+      "common_pitfalls": "Treating Osaka just like Tokyo. The culture here is Kuidaore (eat until you drop). Do not over-schedule museums and shrines here; your entire itinerary should be aggressively focused on food and nightlife.",
+      "signature_moments": "Standing beneath the massive, glowing neon signs of Dotonbori, eating street food that rivals Michelin-starred restaurants, realizing Osaka is the true beating heart of Japanese culture.",
+      "unique_insights": "If Tokyo is Japan's brain, Osaka is its stomach. It is louder, friendlier, and less formal than Tokyo. Because Kyoto has become overwhelmingly crowded, ultra-luxe travelers are now anchoring in Osaka's superior 5-star hotels and day-tripping to Kyoto.",
+      "highlights_arr": [
+        "Using the city as a frictionless, high-speed rail base for the Suzuka F1 Grand Prix",
+        "Diving into the neon-drenched, culinary chaos of Dotonbori at midnight",
+        "Eating impossibly elevated Takoyaki and Okonomiyaki in hidden, 4-seat restaurants",
+        "Staying in the sleek, sky-high luxury of the Conrad or St. Regis Osaka",
+        "Taking a quick 45-minute bullet train for a day trip to the ancient temples of Kyoto",
+        "Exploring the retro-futuristic, gritty neighborhood of Shinsekai"
+      ]
+    }
+  ]
+}

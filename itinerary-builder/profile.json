@@ -1,0 +1,47 @@
+{
+  "_note": "SYNTHETIC Trip DNA for an invented family. Three signal classes: explicit (what they told us on intake), conversational (what they said on calls and in messages, quoted with a date), behavioral (what they actually did on past trips). Every field carries its source so a constraint can be traced back to a signal.",
+  "client_id": "adeyemi-family",
+  "household": {
+    "adults": [{ "name": "Parent A" }, { "name": "Parent B" }],
+    "kids": [{ "name": "Child 1", "age": 13 }, { "name": "Child 2", "age": 8 }],
+    "home": "San Francisco",
+    "home_timezone": "America/Los_Angeles",
+    "client_since": 2024
+  },
+  "explicit": {
+    "source": "intake form and onboarding call, 2027-06-02",
+    "diet": { "exclusions": ["beef"], "note": "No beef for the whole family. Everything else is fine, including raw fish." },
+    "pace": "relaxed mornings, busy afternoons",
+    "must_haves": ["teamLab", "a ninja or samurai experience for the kids", "one proper kaiseki dinner for the adults"],
+    "avoid": ["more than one theme park", "long bus tours"],
+    "transport": "rail is fine; a private car on the days that fight us"
+  },
+  "conversational": {
+    "source": "call notes and messages, dated",
+    "quotes": [
+      { "date": "2027-05-20", "who": "Parent A", "text": "The kids will mutiny by the third temple. Two is the limit on any one day." },
+      { "date": "2027-05-20", "who": "Parent B", "text": "We are not a 6 a.m. family. Nine is early for us on holiday." },
+      { "date": "2027-06-02", "who": "Parent A", "text": "In Italy the driver day was the best day. The train days were fine, the driver day was the one they still talk about." },
+      { "date": "2027-06-11", "who": "Parent B", "text": "Child 2 is a picky eater but will try anything that looks like a game. Conveyor sushi was a hit in San Francisco." }
+    ]
+  },
+  "behavioral": {
+    "source": "past trips designed by us",
+    "past_trips": [
+      {
+        "trip": "Italy, Apr 2025, 9 nights",
+        "booked": ["Rome 3n", "Florence 3n", "Amalfi 3n"],
+        "raved_about": ["the private-driver day in Tuscany", "a pasta class the kids ran"],
+        "skipped": ["the second museum on the Florence day (left after 40 minutes)", "the 07:00 Vatican early entry (asked to move it)"],
+        "lesson": "One anchor in the morning, one hands-on thing in the afternoon, and the day lands. Two museums in a day does not."
+      },
+      {
+        "trip": "Costa Rica, Dec 2024, 7 nights",
+        "booked": ["Arenal 3n", "Manuel Antonio 4n"],
+        "raved_about": ["zip lines", "the night walk"],
+        "skipped": ["the 05:30 birding walk"],
+        "lesson": "Adventure before 09:00 gets cancelled the night before."
+      }
+    ]
+  }
+}

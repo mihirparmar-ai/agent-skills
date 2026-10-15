@@ -1,0 +1,9 @@
+{
+  "_note": "A day with min_outdoor_items or more outdoor items, in a month the destination lists as wet, needs a named fallback on the day. No fallback is a finding.",
+  "min_outdoor_items": 2,
+  "wet_months": {
+    "Tokyo": { "months": ["Jun", "Jul", "Sep", "Oct"], "note": "Rainy season into early July, then typhoon season from September." },
+    "Kyoto": { "months": ["Jun", "Jul"], "note": "Rainy season through mid-July." },
+    "Osaka": { "months": ["Jun", "Jul"], "note": "Rainy season through mid-July." }
+  }
+}

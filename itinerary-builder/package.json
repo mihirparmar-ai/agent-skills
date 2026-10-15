@@ -1,0 +1,15 @@
+{
+  "name": "erl-itinerary-builder",
+  "private": true,
+  "type": "module",
+  "description": "One agent that drafts a trip from a synthetic Trip DNA profile, checks its own draft against house rules, and hands the advisor a proposal. compile, check and eval need no credential.",
+  "scripts": {
+    "compile": "node itinerary-builder.mjs compile",
+    "check": "node itinerary-builder.mjs check golden/cases/faulty-japan.json",
+    "eval": "node itinerary-builder.mjs eval",
+    "draft": "node itinerary-builder.mjs draft"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.126.0"
+  }
+}

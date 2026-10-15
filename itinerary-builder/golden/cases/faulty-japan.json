@@ -1,0 +1,286 @@
+{
+  "case_id": "faulty-japan",
+  "role": "faulty",
+  "purpose": "Every rule class has one planted fault; the checker must catch each.",
+  "expected_findings": [
+    {
+      "class": "timing",
+      "item_contains": "Tokyo"
+    },
+    {
+      "class": "timing",
+      "item_contains": "Kyoto"
+    },
+    {
+      "class": "ticketing",
+      "item_contains": "Shibuya Sky"
+    },
+    {
+      "class": "closure",
+      "item_contains": "Toyosu"
+    },
+    {
+      "class": "jetlag",
+      "item_contains": "Toyosu"
+    },
+    {
+      "class": "group_fit",
+      "item_contains": "whiskey"
+    },
+    {
+      "class": "contingency",
+      "item_contains": "outdoor"
+    },
+    {
+      "class": "contingency",
+      "item_contains": "outdoor"
+    },
+    {
+      "class": "buffer",
+      "item_contains": "Nozomi"
+    },
+    {
+      "class": "profile",
+      "item_contains": "Toyosu"
+    },
+    {
+      "class": "profile",
+      "item_contains": "ninja"
+    },
+    {
+      "class": "profile",
+      "item_contains": "kaiseki"
+    },
+    {
+      "class": "profile",
+      "item_contains": "Kinkaku"
+    }
+  ],
+  "itinerary": {
+    "trip": {
+      "name": "Adeyemi family, Tokyo and Kyoto",
+      "synthetic": true,
+      "party": {
+        "adults": 2,
+        "kids_ages": [
+          8,
+          13
+        ]
+      },
+      "home_timezone": "America/Los_Angeles",
+      "arrival": {
+        "date": "2027-07-13",
+        "time": "15:30",
+        "airport": "HND",
+        "from": "SFO"
+      },
+      "departure": {
+        "date": "2027-07-17",
+        "time": "16:30",
+        "airport": "HND",
+        "to": "SFO"
+      }
+    },
+    "days": [
+      {
+        "date": "2027-07-13",
+        "destination": "Tokyo",
+        "fallback": null,
+        "items": [
+          {
+            "time": "15:30",
+            "kind": "flight",
+            "mode": "intl_flight_arrival",
+            "arrive": "15:30",
+            "venue": "Land at Haneda from San Francisco",
+            "notes": "Immigration, bags, private car to Shibuya."
+          },
+          {
+            "time": "17:15",
+            "kind": "transfer",
+            "mode": "car",
+            "venue": "Hotel check-in, Shibuya"
+          },
+          {
+            "time": "19:00",
+            "kind": "meal",
+            "venue": "Izakaya dinner near the hotel",
+            "outdoor": false
+          },
+          {
+            "time": "20:30",
+            "kind": "activity",
+            "venue": "Shibuya Sky",
+            "venue_id": "shibuya-sky",
+            "ticket": "on_arrival",
+            "outdoor": true,
+            "notes": "Buy tickets at the desk when we get there."
+          }
+        ]
+      },
+      {
+        "date": "2027-07-14",
+        "destination": "Tokyo",
+        "fallback": null,
+        "items": [
+          {
+            "time": "06:00",
+            "kind": "activity",
+            "venue": "Toyosu Market tuna auction viewing and sushi breakfast",
+            "venue_id": "toyosu-market",
+            "outdoor": false
+          },
+          {
+            "time": "11:00",
+            "kind": "activity",
+            "venue": "teamLab Planets",
+            "venue_id": "teamlab-planets",
+            "ticket": "bought",
+            "outdoor": false
+          },
+          {
+            "time": "14:00",
+            "kind": "activity",
+            "venue": "Senso-ji and Nakamise street",
+            "venue_id": "senso-ji",
+            "outdoor": true
+          },
+          {
+            "time": "16:00",
+            "kind": "activity",
+            "venue": "Tokyo National Museum",
+            "venue_id": "tokyo-national-museum",
+            "outdoor": false
+          },
+          {
+            "time": "19:00",
+            "kind": "meal",
+            "venue": "Ramen in Ueno",
+            "outdoor": false
+          }
+        ]
+      },
+      {
+        "date": "2027-07-15",
+        "destination": "Tokyo",
+        "fallback": null,
+        "items": [
+          {
+            "time": "09:30",
+            "kind": "activity",
+            "venue": "Meiji Jingu",
+            "venue_id": "meiji-jingu",
+            "outdoor": true
+          },
+          {
+            "time": "11:00",
+            "kind": "activity",
+            "venue": "Harajuku and Takeshita street",
+            "outdoor": true
+          },
+          {
+            "time": "13:00",
+            "kind": "activity",
+            "venue": "Ghibli Museum, Mitaka",
+            "venue_id": "ghibli-museum",
+            "ticket": "bought",
+            "outdoor": false
+          },
+          {
+            "time": "17:00",
+            "kind": "activity",
+            "venue": "Odaiba seaside and the Gundam",
+            "venue_id": "odaiba-seaside",
+            "outdoor": true
+          },
+          {
+            "time": "19:30",
+            "kind": "meal",
+            "venue": "Dinner in Ginza",
+            "outdoor": false
+          },
+          {
+            "time": "21:30",
+            "kind": "activity",
+            "venue": "Eight-seat whiskey bar, Ginza",
+            "venue_id": "ginza-whiskey-bar",
+            "outdoor": false,
+            "notes": "Whole family; the kids can have juice."
+          }
+        ]
+      },
+      {
+        "date": "2027-07-16",
+        "destination": "Kyoto",
+        "fallback": null,
+        "items": [
+          {
+            "time": "10:00",
+            "kind": "rail",
+            "mode": "rail",
+            "arrive": "12:15",
+            "venue": "Nozomi, Tokyo to Kyoto, Green Car",
+            "venue_id": "nozomi",
+            "ticket": "bought"
+          },
+          {
+            "time": "12:45",
+            "kind": "transfer",
+            "mode": "car",
+            "venue": "Bags to the hotel"
+          },
+          {
+            "time": "14:00",
+            "kind": "activity",
+            "venue": "Fushimi Inari, walk the torii gates",
+            "venue_id": "fushimi-inari",
+            "outdoor": true
+          },
+          {
+            "time": "16:00",
+            "kind": "activity",
+            "venue": "Arashiyama Bamboo Grove and monkey park",
+            "venue_id": "arashiyama-bamboo",
+            "outdoor": true
+          },
+          {
+            "time": "19:00",
+            "kind": "activity",
+            "venue": "Gion evening walk and dinner",
+            "venue_id": "gion",
+            "outdoor": true
+          }
+        ]
+      },
+      {
+        "date": "2027-07-17",
+        "destination": "Kyoto",
+        "fallback": null,
+        "items": [
+          {
+            "time": "09:00",
+            "kind": "activity",
+            "venue": "Kinkaku-ji",
+            "venue_id": "kinkaku-ji",
+            "outdoor": true
+          },
+          {
+            "time": "12:30",
+            "kind": "rail",
+            "mode": "rail",
+            "arrive": "14:45",
+            "venue": "Nozomi, Kyoto to Tokyo, Green Car",
+            "venue_id": "nozomi",
+            "ticket": "bought"
+          },
+          {
+            "time": "16:30",
+            "kind": "flight",
+            "mode": "intl_flight",
+            "venue": "Haneda departure to San Francisco"
+          }
+        ]
+      }
+    ]
+  }
+}

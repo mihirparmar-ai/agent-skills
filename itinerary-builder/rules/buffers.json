@@ -1,0 +1,9 @@
+{
+  "_note": "Minimum minutes between the arrival of one leg and the departure of the next, keyed by the transport pair. These are house rules, not published limits.",
+  "pairs": {
+    "rail->intl_flight": { "min_minutes": 180, "note": "Tokyo Station or Shinagawa to Haneda is 35 to 45 minutes door to door, and international check-in wants two hours. Anything under three hours from rail arrival to departure is a gamble on one delayed train." },
+    "rail->domestic_flight": { "min_minutes": 120, "note": "Domestic check-in closes 20 minutes before departure, so two hours covers the transfer and one missed connection." },
+    "car->ferry": { "min_minutes": 30, "note": "Ferries leave on time and the next one may be an hour away." },
+    "intl_flight_arrival->rail": { "min_minutes": 150, "note": "Immigration and bags at Haneda in the afternoon peak can take 90 minutes." }
+  }
+}

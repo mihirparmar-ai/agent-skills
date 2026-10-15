@@ -1,0 +1,47 @@
+{
+  "_note": "Advance-purchase windows. advance_days is how far ahead tickets must be secured to be sure of entry. A plan that says on_arrival or walk_up for one of these venues is a finding.",
+  "venues": {
+    "shibuya-sky": {
+      "advance_days": 14,
+      "note": "Timed-entry tickets are sold online and released 14 days ahead at 00:00 JST. Sunset windows sell out first.",
+      "source": "shibuya-scramble-square.com/sky ticket page",
+      "checked_on": "2026-09-15"
+    },
+    "teamlab-planets": {
+      "advance_days": 14,
+      "note": "Date and time specific. In school-holiday months, buy at least two weeks out.",
+      "source": "teamlab.art/e/planets ticket page",
+      "checked_on": "2026-09-15"
+    },
+    "ghibli-museum": {
+      "advance_days": 30,
+      "note": "Tickets go on sale on the 10th of the previous month and there are no walk-up sales.",
+      "source": "ghibli-museum.jp/en/ticket-information",
+      "checked_on": "2026-09-15"
+    },
+    "nozomi": {
+      "advance_days": 30,
+      "note": "Reserved Green Car seats open one month ahead on smartEX. Holiday-period trains sell out.",
+      "source": "smart-ex.jp",
+      "checked_on": "2026-09-15"
+    },
+    "kyoto-ninja-experience": {
+      "advance_days": 3,
+      "note": "Sessions are small and sell out in school holidays; book at least three days ahead.",
+      "source": "venue site",
+      "checked_on": "2026-09-15"
+    },
+    "kaiseki-gion": {
+      "advance_days": 30,
+      "note": "Private rooms are released a month out and go the same week in high season.",
+      "source": "house note from booking",
+      "checked_on": "2026-09-15"
+    },
+    "kyoto-sweets-class": {
+      "advance_days": 3,
+      "note": "Book three days ahead; no same-day.",
+      "source": "venue site",
+      "checked_on": "2026-09-15"
+    }
+  }
+}
